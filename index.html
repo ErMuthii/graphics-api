@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmic Defender — HTML5 Canvas Game</title>
+  <meta name="description" content="A multimedia game built with HTML5 Canvas API demonstrating geometry, rasterization, transformations, scoring, and audio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HUD overlay layer (sits above canvas) -->
+  <div id="hud">
+    <div id="hud-left">
+      <span class="hud-label">SCORE</span>
+      <span id="score-display">0</span>
+    </div>
+    <div id="hud-center">
+      <span id="game-title">COSMIC DEFENDER</span>
+    </div>
+    <div id="hud-right">
+      <span class="hud-label">LIVES</span>
+      <span id="lives-display">❤️ ❤️ ❤️</span>
+    </div>
+  </div>
+
+  <!-- Level & speed indicator -->
+  <div id="level-bar">
+    <span id="level-display">LEVEL 1</span>
+    <span id="speed-display">SPEED ×1.0</span>
+  </div>
+
+  <!-- The main HTML5 Canvas — all graphics are drawn here -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Overlay screens -->
+  <div id="overlay" class="active">
+    <div class="overlay-content">
+      <h1>COSMIC DEFENDER</h1>
+      <p class="subtitle">Destroy asteroids. Survive the void.</p>
+      <div class="controls-grid">
+        <div class="control-item"><kbd>← →</kbd> Move Ship</div>
+        <div class="control-item"><kbd>SPACE</kbd> Fire</div>
+        <div class="control-item"><kbd>↑</kbd> Thrust / Shield</div>
+        <div class="control-item"><kbd>M</kbd> Mute Audio</div>
+      </div>
+      <button id="start-btn">LAUNCH MISSION</button>
+    </div>
+  </div>
+
+  <div id="gameover-overlay" class="hidden">
+    <div class="overlay-content">
+      <h1>MISSION FAILED</h1>
+      <p class="subtitle">The cosmos reclaimed its silence.</p>
+      <p id="final-score-text">FINAL SCORE: 0</p>
+      <p id="final-level-text">LEVEL REACHED: 1</p>
+      <button id="restart-btn">RETRY MISSION</button>
+    </div>
+  </div>
+
+  <!-- Load the game script -->
+  <script src="game.js"></script>
+</body>
+</html>
